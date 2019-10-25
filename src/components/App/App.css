@@ -2,6 +2,17 @@
   text-align: center;
 }
 
+.images{
+  width: 150px;
+  height: 220px;
+  padding: 5px;
+}
+
+img{
+  width: 150px;
+  height: 150px;
+}
+
 .App-header {
   background-color: #222;
   height: 70px;
@@ -20,4 +31,8 @@
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+#galleryDiv{
+  display: flex;
 }

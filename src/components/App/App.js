@@ -1,7 +1,36 @@
 import React, { Component } from 'react';
 import './App.css';
+import axios from 'axios';
+import GalleryList from '../GalleryList/GalleryList';
 
 class App extends Component {
+  state= {
+    gallery: [],
+    newImage:{ id: '', path: '', description: '', likes: 0 }
+  }
+
+  componentDidMount(){
+    // component/DOM is ready (like onReady)
+    console.log('app component is ready');
+    this.getImages();
+  }
+
+  getImages(){
+    console.log('getting images');
+    axios.get('/gallery')
+      .then(response => {
+        this.setState({
+          gallery: response.data
+        })
+        console.log(this.state.gallery);
+      })
+  }
+
+  toggleImage(id){
+    console.log(id);
+    
+  }
+
   render() {
     return (
       <div className="App">
@@ -9,8 +38,10 @@ class App extends Component {
           <h1 className="App-title">Gallery of my life</h1>
         </header>
         <br/>
-        <p>Gallery goes here</p>
-        <img src="images/goat_small.jpg"/>
+        <GalleryList 
+          gallery={this.state.gallery}
+          toggleImage={this.toggleImage}
+        />
       </div>
     );
   }
