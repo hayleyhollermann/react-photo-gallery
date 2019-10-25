@@ -9,7 +9,7 @@ class GalleryList extends Component {
             {this.props.gallery.map(picture => (
               <div className="images" key={picture.id}>
                 <img src={picture.path} alt={picture.description}/>
-                <button onClick={ ()=> this.props.toggleImage(picture.id)}>Love it!</button>
+                <button onClick={ ()=> this.props.loveImage(picture.id, picture.likes)}>Love it!</button>
                 <p>Loved by {picture.likes} people!!</p>
               </div>
             ))}

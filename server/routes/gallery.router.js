@@ -4,17 +4,21 @@ const pool = require('../modules/pool.js');
 
 // DO NOT MODIFY THIS FILE FOR BASE MODE
 
-// // PUT Route
-// router.put('/like/:id', (req, res) => {
-//     console.log(req.params);
-//     const galleryId = req.params.id;
-//     for(const galleryItem of galleryItems) {
-//         if(galleryItem.id == galleryId) {
-//             galleryItem.likes += 1;
-//         }
-//     }
-//     res.sendStatus(200);
-// }); // END PUT Route
+// PUT Route
+router.put('/likes/:id', (req, res) => {
+    console.log(req.params);
+    console.log(req.params.id);
+    console.log(req.body.likes);
+        
+    const queryT = `UPDATE "gallery" SET "likes" = $1
+    WHERE "id" = $2`;
+    pool.query(queryT, [req.body.likes, req.params.id]).then(() => {
+        res.sendStatus(200);
+    }).catch((error) => {
+        console.log(`Error in Put query`, error);
+        res.sendStatus(500);
+    });
+}); // END PUT Route
 
 // GET Route
 router.get('/', (req, res) => {

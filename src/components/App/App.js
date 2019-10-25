@@ -26,9 +26,18 @@ class App extends Component {
       })
   }
 
-  toggleImage(id){
-    console.log(id);
+  loveImage = (id, likes) => {
+    console.log(id, likes);
+    let pictureLikes = likes + 1;
+    console.log(pictureLikes);
     
+    axios.put(`/gallery/likes/${id}`, {likes: pictureLikes})
+    .then(response => {
+      this.getImages();
+    })
+    .catch( error=> {
+      console.log(`Couldn't update likes!`, error)
+    })
   }
 
   render() {
@@ -40,7 +49,7 @@ class App extends Component {
         <br/>
         <GalleryList 
           gallery={this.state.gallery}
-          toggleImage={this.toggleImage}
+          loveImage={this.loveImage}
         />
       </div>
     );
