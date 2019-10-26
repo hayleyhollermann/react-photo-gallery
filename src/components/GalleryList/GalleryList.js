@@ -6,16 +6,15 @@ class GalleryList extends Component {
     render() {
       return (
           <>
-        <p>Enjoy my lovely gallery!</p>
           <div id="galleryDiv">
             {this.props.gallery.map(picture => (
-              <div key={picture.id}>
+              <div class="singleImageItem" key={picture.id}>
                 <GalleryItem 
                   path={picture.path} 
                   id={picture.id}
                   description={picture.description}
                 />
-                <button onClick={ ()=> this.props.loveImage(picture.id, picture.likes)}>Love it!</button>
+                <button class="loveImageButton" onClick={ ()=> this.props.loveImage(picture.id, picture.likes)}>Love it!</button>
                 <p>Loved by {picture.likes} people!!</p>
               </div>
             ))}
