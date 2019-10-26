@@ -15,7 +15,7 @@ class App extends Component {
     this.getImages();
   }
 
-  getImages(){
+  getImages = () => {
     console.log('getting images');
     axios.get('/gallery')
       .then(response => {
