@@ -35,4 +35,5 @@ img{
 
 #galleryDiv{
   display: flex;
+  flex-wrap: wrap;
 }

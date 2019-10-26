@@ -2,10 +2,7 @@ import React, { Component } from 'react';
 import GalleryItem from '../GalleryItem/GalleryItem';
 
 class GalleryList extends Component {
-  toggleImage(id, description){
-    console.log('flippin image!!', id, description);
-    
-  }
+
     render() {
       return (
           <>
