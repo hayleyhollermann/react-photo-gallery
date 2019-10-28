@@ -14,13 +14,12 @@ class GalleryItem extends Component {
       return (
           <>
           <div className="images" key={this.props.id} onClick={this.toggleImage}>
-              {/* conditional rendering, picture or description */}
-              {this.state.image ? 
+            {/* conditional rendering, picture or description */}
+            {this.state.image ? 
               <img 
                 src={this.props.path} 
-                alt={this.props.id}
-              /> : 
-                <p>{this.props.description}</p>}
+                alt={this.props.id}/> : 
+              <p>{this.props.description}</p>}
           </div>
           </>
       );
