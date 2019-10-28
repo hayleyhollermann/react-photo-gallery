@@ -48,6 +48,7 @@ img{
 
 #galleryDiv{
   display: flex;
+  justify-content: space-evenly;
   flex-wrap: wrap;
   font-family: cursive;
   font-size: large;
