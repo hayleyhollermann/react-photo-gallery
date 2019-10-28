@@ -24,6 +24,9 @@ class App extends Component {
         })
         console.log(this.state.gallery);
       })
+      .catch(error => {
+        console.log('error with GET', error);
+      })
   }
 
   loveImage = (id, likes) => {
@@ -36,7 +39,7 @@ class App extends Component {
       this.getImages();
     })
     .catch( error=> {
-      console.log(`Couldn't update likes!`, error)
+      console.log(`error with PUT`, error)
     })
   }
 
@@ -44,7 +47,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Gallery of my life</h1>
+          <h1 className="App-title">Welcome to the gallery of my life</h1>
         </header>
         <br/>
         <GalleryList 
