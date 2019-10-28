@@ -41,11 +41,6 @@ img{
   font-size: large;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
 #galleryDiv{
   display: flex;
   justify-content: space-evenly;
@@ -56,6 +51,7 @@ img{
 
 .singleImageItem{
   background-color: whitesmoke;
+  box-shadow: 7px 10px 5px black;
   margin: 30px;
   border-radius: 10px;
 }
