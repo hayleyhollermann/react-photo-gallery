@@ -18,7 +18,7 @@ class GalleryItem extends Component {
                 src={this.props.path} 
                 alt={this.props.id}
               /> : 
-                <span><p>{this.props.description}</p></span>}
+                <p>{this.props.description}</p>}
           </div>
           </>
       );
