@@ -14,7 +14,11 @@ class GalleryList extends Component {
                   id={picture.id}
                   description={picture.description}
                 />
-                <button class="loveImageButton" onClick={ ()=> this.props.loveImage(picture.id, picture.likes)}>Love it!</button>
+                {/* love it button */}
+                <button class="loveImageButton" 
+                  onClick={ ()=> this.props.loveImage(picture.id, picture.likes)}>
+                  Love it!
+                </button>
                 <p>Loved by {picture.likes} people!!</p>
               </div>
             ))}

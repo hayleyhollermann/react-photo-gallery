@@ -15,6 +15,7 @@ class App extends Component {
     this.getImages();
   }
 
+  // GET
   getImages = () => {
     console.log('getting images');
     axios.get('/gallery')
@@ -29,11 +30,12 @@ class App extends Component {
       })
   }
 
+  // PUT
   loveImage = (id, likes) => {
     console.log(id, likes);
+    // increase number of likes by 1
     let pictureLikes = likes + 1;
     console.log(pictureLikes);
-    
     axios.put(`/gallery/likes/${id}`, {likes: pictureLikes})
     .then(response => {
       this.getImages();

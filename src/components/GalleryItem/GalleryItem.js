@@ -5,6 +5,7 @@ class GalleryItem extends Component {
         image: true,
     }
 
+    // on click, changes state.image value
     toggleImage = () => {
         this.setState({image: !this.state.image})
     }
@@ -13,6 +14,7 @@ class GalleryItem extends Component {
       return (
           <>
           <div className="images" key={this.props.id} onClick={this.toggleImage}>
+              {/* conditional rendering, picture or description */}
               {this.state.image ? 
               <img 
                 src={this.props.path} 
